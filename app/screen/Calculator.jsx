@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 
 const Calculator = () => {
   const [displayValue, setDisplayValue] = React.useState("0");
-  const [operator, setOperator] = React.useState("");
+  const [operator, setOperator] = React.useState(null);
   const [firstValue, setFirstValue] = React.useState("");
 
   const handleNumberInput = (num) => {
@@ -25,8 +25,8 @@ const Calculator = () => {
   const handleEqual = () => {
     const num1 = parseFloat(firstValue);
     const num2 = parseFloat(displayValue);
-
     let result;
+
     switch (operator) {
       case "+":
         result = num1 + num2;
@@ -37,25 +37,20 @@ const Calculator = () => {
       case "*":
         result = num1 * num2;
         break;
-      //   case "/":
-      //     if (num2 === 0) {
-      //       result = "Error";
-      //     } else {
-      //       result = num1 / num2;
-      //     }
-      //     break;
       case "/":
-        result = num1 / num2;
+        if (num2 === 0) {
+          result = "Error";
+        } else {
+          result = num1 / num2;
+        }
         break;
-      //   case "%":
-      //     if (num2 === 0) {
-      //       result = "Error";
-      //     } else {
-      //       result = num1 % num2;
-      //     }
-      //     break;
       case "%":
-        result = num1 % num2;
+        if (num2 === 0) {
+          result = "Error";
+        } else {
+          result = num1 % num2;
+        }
+        break;
         break;
       default:
         result = displayValue;
@@ -121,8 +116,8 @@ const Calculator = () => {
             size="triple"
             onPress={() => handleNumberInput(0)}
           />
-          <Button text="." />
-          <Button color="2" text="=" onPress={handleEqual} />
+          <Button text="." color="." onPress={() => handleNumberInput(".")} />
+          <Button text="=" onPress={handleEqual} color="=" />
         </Row>
       </View>
     </View>
@@ -134,15 +129,18 @@ export default Calculator;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e3f2fd",
+    // backgroundColor: "#e3f2fd",
+    backgroundColor: "#FFFFEC",
     alignItems: "stretch",
     justifyContent: "flex-end",
     padding: 20,
   },
   displayContainer: {
-    backgroundColor: "#80d8ff",
+    // backgroundColor: "#80d8ff",
+    // backgroundColor: "#F1E4C3",
+    backgroundColor: "#dee6a3",
     padding: 20,
-    borderRadius: 100,
+    borderRadius: 25,
     marginBottom: 20,
   },
   displayText: {

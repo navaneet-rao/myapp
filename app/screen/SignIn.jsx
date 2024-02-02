@@ -7,7 +7,8 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import Calculator from "./Calculator";
+import UserInputBox from "../../components/UserInputBox";
+import Home from "./Home";
 
 const SignIn = ({ navigation }) => {
   {
@@ -23,37 +24,52 @@ const SignIn = ({ navigation }) => {
       }
     };
     return (
-      <View style={styles.container}>
-        <View style={styles.SubContainer}>
-          <View style={styles.imageView}>
-            <Image
-              style={styles.image}
-              source={require("../..//assets/JIT-Logo.png")}
-              resizeMode="contain"
-            />
+      <View style={styles.body}>
+        <Image
+          source={require("../../assets/GFXoPO.jpg")}
+          style={{ width: 2000, height: 300 }}
+          resizeMode="cover"
+        />
+        <View style={styles.container}>
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ fontSize: 40, marginBottom: 10 }}>WELCOME</Text>
+            <Text style={{ marginBottom: 10 }}>Login to your account</Text>
           </View>
-          <Text style={styles.text}>Email</Text>
-          <TextInput
-            style={styles.TextInput}
-            placeholder="Your Email"
-            autoCapitalize="none"
-            onChangeText={setEmail}
-            value={email}
+          <UserInputBox
+            placeholders={"Email"}
+            isPass={false}
+            handleChange={() => setEmail()}
           />
-          <Text style={styles.text}>Enter password </Text>
-          <TextInput
-            style={styles.TextInput}
-            placeholder="password"
-            autoCapitalize="none"
-            secureTextEntry={true}
-            onChangeText={setPassword}
-            value={password}
+          <UserInputBox
+            placeholders={"Password"}
+            isPass={true}
+            handleChange={() => setPassword()}
           />
-          <View style={styles.buttonView}>
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={{ fontSize: 20 }}>submit</Text>
+          <View style={{ marginTop: "10", flexDirection: "row" }}>
+            <Text>Don't Have an account!!</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+              <Text
+                style={{ marginTop: "1", color: "#FF7E01", marginRight: "10" }}
+              >
+                SignUp
+              </Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity
+            onPress={handleLogin}
+            style={{
+              backgroundColor: "#FF7E01",
+              padding: 5,
+              borderRadius: 20,
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 20,
+              width: "34%",
+              height: 60,
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 20 }}>Submit</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -63,51 +79,17 @@ const SignIn = ({ navigation }) => {
 export default SignIn;
 
 const styles = StyleSheet.create({
-  container: {
+  body: {
     flex: 1,
-    backgroundColor: "#e3f2fd",
-  },
-  SubContainer: {
-    margin: 14,
-  },
-  imageView: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    marginTop: 30,
-    textAlign: "left",
-    paddingLeft: 20,
-    fontSize: 20,
-  },
-  image: {
-    width: 200,
-    height: 200,
-    marginTop: 90,
-  },
-  TextInput: {
-    height: 60,
+    justifyContent: "flex-start",
     width: "100%",
-    borderColor: "green",
-    borderWidth: 1,
-    marginTop: 5,
-    paddingLeft: 10,
-    borderRadius: 5,
   },
-  buttonView: {
+  container: {
     alignItems: "center",
-    justifyContent: "center",
-  },
-
-  button: {
-    height: 50,
-    width: "30%",
-    alignItems: "center",
-    backgroundColor: "#EFCA08",
-    marginTop: 20,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "#000",
-    borderRadius: 5,
+    borderRadius: 50,
+    padding: 20,
+    height: "100%",
+    marginTop: -50,
+    backgroundColor: "#fff",
   },
 });
