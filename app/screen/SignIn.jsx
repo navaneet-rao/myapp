@@ -9,8 +9,7 @@ import {
 } from "react-native";
 import Calculator from "./Calculator";
 
-
-const SignIn = ({navigation}) => {
+const SignIn = ({ navigation }) => {
   {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -18,7 +17,7 @@ const SignIn = ({navigation}) => {
     const handleLogin = () => {
       console.log("Logging in...");
       if ((email && password) != "") {
-        navigation.replace("Calculator");
+        navigation.replace("Home");
       } else {
         alert("Please enter your email and password.");
       }
@@ -29,7 +28,7 @@ const SignIn = ({navigation}) => {
           <View style={styles.imageView}>
             <Image
               style={styles.image}
-              source={require("../..//assets/download.png")}
+              source={require("../..//assets/JIT-Logo.png")}
               resizeMode="contain"
             />
           </View>
@@ -66,7 +65,7 @@ export default SignIn;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e3f2fd",
   },
   SubContainer: {
     margin: 14,
@@ -82,8 +81,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
     marginTop: 90,
   },
   TextInput: {
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: "30%",
     alignItems: "center",
-    backgroundColor: "#ebae34",
+    backgroundColor: "#EFCA08",
     marginTop: 20,
     alignItems: "center",
     justifyContent: "center",
