@@ -24,6 +24,12 @@ const Button = ({ color, text, size = "normal", onPress }) => {
     case "3":
       buttonStyles.push(styles.buttonColor3);
       break;
+    case ".":
+      buttonStyles.push(styles.buttonPoint);
+      break;
+    case "=":
+      buttonStyles.push(styles.buttonEqual);
+      break;
     default:
       break;
   }
@@ -37,7 +43,7 @@ const Button = ({ color, text, size = "normal", onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#C6A969",
     padding: 15,
     borderRadius: 100,
     alignItems: "center",
@@ -58,13 +64,22 @@ const styles = StyleSheet.create({
     color: "#212121",
   },
   buttonColor1: {
-    backgroundColor: "#03a9f4",
+    backgroundColor: "#D4E7C5",
+    borderRadius:20,
   },
   buttonColor2: {
-    backgroundColor: "#cddc39",
+    backgroundColor: "#D4E7C5",
+    // borderRadius:20,
   },
   buttonColor3: {
-    backgroundColor: "#b388ff",
+    backgroundColor: "#C6A969",
+    // borderRadius:20,
+  },
+  buttonPoint: {
+    backgroundColor: "#C6A969",
+  },
+  buttonEqual: {
+    backgroundColor: "#FFB534",
   },
 });
 

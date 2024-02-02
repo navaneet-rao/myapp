@@ -51,7 +51,7 @@ const SignIn = ({ navigation }) => {
           />
           <View style={styles.buttonView}>
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={{ fontSize: 20 }}>submit</Text>
+              <Text style={{ fontSize: 30 }}>submit</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -65,7 +65,7 @@ export default SignIn;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e3f2fd",
+    backgroundColor: "#FFFFEC",
   },
   SubContainer: {
     margin: 14,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: "30%",
     alignItems: "center",
-    backgroundColor: "#EFCA08",
+    backgroundColor: "#C6A969",
     marginTop: 20,
     alignItems: "center",
     justifyContent: "center",
