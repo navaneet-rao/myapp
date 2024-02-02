@@ -27,6 +27,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   main: {
+    paddingTop:60,
     backgroundColor: "#FFFFEC",
     height: "1000%",
   },
