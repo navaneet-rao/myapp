@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import UserInputBox from "../../components/UserInputBox";
-import Home from "./Home";
 
 const SignIn = ({ navigation }) => {
   {
@@ -16,8 +15,8 @@ const SignIn = ({ navigation }) => {
     const [password, setPassword] = React.useState("");
 
     const handleLogin = () => {
-      console.log("Logging in...");
       if ((email && password) != "") {
+        console.log("Logging in...");
         navigation.replace("Home");
       } else {
         alert("Please enter your email and password.");

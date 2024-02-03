@@ -35,6 +35,7 @@ export function ProductsList({ navigation }) {
 const styles = StyleSheet.create({
   productsList: {
     backgroundColor: "#eeeeee",
+    marginVertical: 50,  
   },
   productsListContainer: {
     backgroundColor: "#eeeeee",

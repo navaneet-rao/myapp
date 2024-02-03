@@ -29,7 +29,7 @@ export function ProductDetails({ route }) {
           <Text style={styles.name}>{product.name}</Text>
           <Text style={styles.price}>$ {product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
-          {/* <Button onPress={onAddToCart} title="Add to cart" /> */}
+          <Button title="Add to cart" />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   image: {
+    marginTop: 50,
     height: 300,
     width: "100%",
   },
@@ -57,13 +58,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   name: {
-    fontSize: 22,
+    fontSize: 32,
     fontWeight: "bold",
   },
   price: {
     fontSize: 16,
     fontWeight: "600",
-    marginBottom: 8,
+    marginBottom: 10,
   },
   description: {
     fontSize: 16,

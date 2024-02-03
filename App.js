@@ -7,13 +7,15 @@ import Home from "./app/screen/Home";
 import SignIn from "./app/screen/SignIn";
 import { ProductsList } from "./app/screen/ProductsList";
 import { ProductDetails } from "./app/screen/ProductDetails";
+import AddProducts from "./app/screen/AddProducts";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="AddProducts" component={AddProducts} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Calculator" component={Calculator} />
