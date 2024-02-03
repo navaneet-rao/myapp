@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
+import { ProductsList } from "./ProductsList";
 
 const Home = ({ navigation }) => {
   const handleCalculator = () => {
     console.log("Calculator");
     navigation.navigate("Calculator");
+  };
+  const handleProduct = () => {
+    console.log("Product");
+    navigation.navigate("ProductsList");
   };
   return (
     <View style={styles.main}>
@@ -15,7 +20,7 @@ const Home = ({ navigation }) => {
         <TouchableOpacity style={styles.button} onPress={handleCalculator}>
           <Text style={styles.buttonText}>Calculator</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleProduct}>
           <Text style={styles.buttonText}>Task 2</Text>
         </TouchableOpacity>
       </View>
@@ -27,7 +32,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   main: {
-    paddingTop:60,
+    paddingTop: 60,
     backgroundColor: "#FFFFEC",
     height: "1000%",
   },

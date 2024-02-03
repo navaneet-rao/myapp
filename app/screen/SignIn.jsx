@@ -68,7 +68,9 @@ const SignIn = ({ navigation }) => {
               height: 60,
             }}
           >
-            <Text style={{ color: "white", fontSize: 20 }}>Submit</Text>
+            <Text style={{ color: "white", fontSize: 20 }}>
+              Submit
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
